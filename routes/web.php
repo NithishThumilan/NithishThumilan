@@ -2,7 +2,7 @@
 
 
 use Illuminate\Support\Facades\Route;
-
+use App\Models\thumilan;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -14,9 +14,8 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function(){
-
-     $d = '<h2>Laravel</h2><h2>Laravel</h2><input type="text" placeholder="Enter the Text">';
-    
-    return $d;
+Route::get('/', function()
+{
+    $user =  thumilan::find(1);
+    dd($user->name);
 });
