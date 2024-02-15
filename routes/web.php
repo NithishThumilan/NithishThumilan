@@ -1,6 +1,6 @@
 <?php
 
-
+use App\Http\Controllers\MailController;
 use Illuminate\Support\Facades\Route;
 use App\Models\thumilan;
 /*
@@ -16,6 +16,7 @@ use App\Models\thumilan;
 
 Route::get('/', function()
 {
-    $user =  thumilan::find(1);
-    dd($user->name);
+    return view('contact_form');
 });
+
+Route::post('/send', [MailController::class, "sendContactMail"])->name('send.contact_mail');
